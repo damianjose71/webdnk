@@ -1,0 +1,56 @@
+/* =============================================================
+   DNK — animaciones
+   ------------------------------------------------------------
+   ARQUITECTURA PREPARADA, NO IMPLEMENTADA.
+   En esta primera fase NO se añaden animaciones complejas:
+   la prioridad es una base limpia y no visualmente cargada.
+
+   Convenciones para cuando se incorporen:
+   - Definir cada animación/keyframes aquí, con nombre
+     descriptivo y prefijo `dnk-`.
+   - Usar las variables --transition-* de variables.css para
+     transiciones simples (hover, focus, estados).
+   - Respetar prefers-reduced-motion (ya gestionado en
+     globals.css).
+   - Evitar animaciones que bloqueen el hilo principal:
+     preferir transform y opacity.
+   - Documentar cada animación nueva en
+     docs/architecture/component-map.md.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Transiciones de utilidad (existentes)
+   --------------------------------------------------------------- */
+.dnk-fade-in {
+  animation: dnk-fade-in var(--transition-slow) both;
+}
+
+.dnk-fade-in-up {
+  animation: dnk-fade-in-up var(--transition-slow) both;
+}
+
+/* ---------------------------------------------------------------
+   Keyframes base (placeholders reutilizables)
+   --------------------------------------------------------------- */
+@keyframes dnk-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dnk-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TODO: añadir aquí las animaciones de scroll-reveal, menú
+   móvil, hover de tarjetas, etc., cuando se defina el diseño. */

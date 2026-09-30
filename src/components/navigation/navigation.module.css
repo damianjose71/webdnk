@@ -1,0 +1,151 @@
+/* =============================================================
+   DNK — estilos de navegación (Navbar, NavLinks, MobileMenu)
+   Responsive: desktop (≥768px) / móvil (<768px)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Desktop
+   --------------------------------------------------------------- */
+.desktopNav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: inline-block;
+  padding: var(--space-3xs) 0;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-accent);
+}
+
+.navLinkActive {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+/* Desplegable desktop: CSS puro (hover + foco de teclado) */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: var(--z-dropdown);
+  min-width: 15rem;
+  padding: var(--space-2xs) 0;
+  margin: 0;
+  list-style: none;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
+    visibility var(--transition-fast);
+}
+
+.hasDropdown:hover .dropdown,
+.hasDropdown:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown .navLink {
+  display: block;
+  width: 100%;
+  padding: var(--space-2xs) var(--space-sm);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------
+   Móvil
+   --------------------------------------------------------------- */
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xs);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.mobilePanel {
+  position: fixed;
+  inset: 4rem 0 0 0;
+  z-index: var(--z-mobile-menu);
+  padding: var(--space-md) var(--container-pad);
+  overflow-y: auto;
+  background-color: var(--color-surface);
+}
+
+.mobileNav {
+  border-top: 1px solid var(--color-border);
+}
+
+.navListStacked {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navListStacked > li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navListStacked .navLink {
+  display: block;
+  padding: var(--space-sm) 0;
+  font-size: var(--text-lg);
+}
+
+/* Sublista de servicios en móvil */
+.subList {
+  padding: 0 0 var(--space-sm) var(--space-sm);
+  margin: 0;
+  list-style: none;
+}
+
+.subList .navLink {
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+}
+
+/* ---------------------------------------------------------------
+   Tablet / desktop
+   --------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .desktopNav {
+    display: block;
+  }
+
+  .menuButton,
+  .mobilePanel {
+    display: none;
+  }
+}

@@ -1,0 +1,191 @@
+/* =============================================================
+   DNK — estilos globales / base
+   ------------------------------------------------------------
+   Incluye variables.css y animations.css.
+   Aquí solo viven: reset, tipografía base, elementos semánticos,
+   focus states y utilidades mínimas.
+   Los estilos de componentes viven en CSS Modules co-localizados.
+   ============================================================= */
+
+@import "./variables.css";
+@import "./animations.css";
+
+/* ---------------------------------------------------------------
+   Reset ligero
+   --------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-3xl);
+}
+
+h2 {
+  font-size: var(--text-2xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+h4 {
+  font-size: var(--text-lg);
+}
+
+a {
+  color: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------
+   Accesibilidad: focus visible consistente
+   --------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Evita el salto de scroll cuando se abre el menú móvil */
+body[data-menu-open="true"] {
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------
+   Enlace de salto (skip link) para navegación por teclado
+   --------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-sm);
+  z-index: calc(var(--z-overlay) + 1);
+  padding: var(--space-2xs) var(--space-sm);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus-visible {
+  top: var(--space-sm);
+}
+
+/* ---------------------------------------------------------------
+   Utilidades mínimas
+   --------------------------------------------------------------- */
+
+/* Nota visible para indicar contenido pendiente (placeholders) */
+.placeholder-note {
+  display: inline-block;
+  padding: var(--space-2xs) var(--space-xs);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Rejilla de tarjetas reutilizable en páginas (servicios, proyectos) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+/* Texto solo para lectores por pantalla (SR) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------
+   Preferencias de movimiento reducido (accesibilidad)
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

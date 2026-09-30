@@ -1,0 +1,49 @@
+/* =============================================================
+   DNK — estilos de secciones
+   (Hero, About, Services, FeaturedProjects, Process,
+    Testimonials, CTA, Contact)
+   Versión estructural: sin decisiones visuales definitivas.
+   ============================================================= */
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+/* Variante para usar dentro de PageContainer (sin doble padding) */
+.sectionFlush {
+  margin-top: var(--space-lg);
+}
+
+.hero {
+  padding-block: var(--space-2xl) var(--space-xl);
+  background-color: var(--color-surface-alt);
+}
+
+.cta {
+  padding-block: var(--space-xl);
+  margin-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+}
+
+.lead {
+  max-width: 60ch;
+  margin-top: var(--space-sm);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+/* Rejilla responsive: 1 col móvil → 2 tablet → 3-4 desktop */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}

@@ -1,0 +1,74 @@
+/* =============================================================
+   DNK — estilos de layout (Header, Footer, PageContainer)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Header
+   --------------------------------------------------------------- */
+.header {
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: 4rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+/* ---------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------- */
+.footer {
+  margin-top: var(--space-3xl);
+  padding-block: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  padding: 0;
+  margin-bottom: var(--space-md);
+  list-style: none;
+}
+
+.footerLink {
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.footerNote {
+  margin-bottom: var(--space-sm);
+}
+
+.footerLegal {
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------------------------------------------------------------
+   PageContainer
+   --------------------------------------------------------------- */
+.page {
+  padding-block: var(--space-xl) var(--space-2xl);
+}

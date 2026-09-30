@@ -1,0 +1,127 @@
+/* =============================================================
+   DNK — variables globales
+   -------------------------------------------------------------
+   IMPORTANTE: la identidad visual definitiva de DNK todavía no
+   está definida. TODOS los valores de este archivo son
+   TEMPORALES / PLACEHOLDER y deben sustituirse cuando exista
+   la guía de marca (ver docs/brand/colors.md y
+   docs/brand/typography.md).
+
+   Regla: cambiar aquí = cambiar en todo el sitio.
+   No hardcodear colores, tipografías ni espaciados en
+   componentes; usar siempre estas variables.
+   ============================================================= */
+
+:root {
+  /* --------------------------------------------------------
+     COLOR — PLACEHOLDER (paleta neutra de trabajo)
+     TODO: definir paleta oficial de DNK (primario, acento,
+     neutros, estados, superficies).
+     -------------------------------------------------------- */
+  --color-primary: #1a1a2e; /* PLACEHOLDER */
+  --color-primary-contrast: #ffffff; /* PLACEHOLDER */
+  --color-accent: #d1244a; /* PLACEHOLDER (AA sobre blanco: ~5.2:1) */
+  --color-accent-contrast: #ffffff; /* PLACEHOLDER */
+
+  --color-text: #16161d; /* PLACEHOLDER */
+  --color-text-muted: #5c5c6b; /* PLACEHOLDER */
+  --color-border: #dcdce3; /* PLACEHOLDER */
+
+  --color-surface: #ffffff; /* PLACEHOLDER */
+  --color-surface-alt: #f5f5f8; /* PLACEHOLDER */
+
+  --color-success: #1f7a4d; /* PLACEHOLDER */
+  --color-error: #b3261e; /* PLACEHOLDER */
+
+  /* Opacidad utilitaria (overlays, focus rings) */
+  --color-overlay: rgba(10, 10, 15, 0.6); /* PLACEHOLDER */
+
+  /* --------------------------------------------------------
+     TIPOGRAFÍA — PLACEHOLDER
+     TODO: decidir familias definitivas (web fonts propias o
+     sistema) y registrarlas en public/fonts + docs/brand.
+     -------------------------------------------------------- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif; /* PLACEHOLDER */
+  --font-display: var(--font-sans); /* PLACEHOLDER: tipografía de titulares */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Escala tipográfica fluida (clamp) */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.96rem + 0.3vw, 1.1rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.5vw, 1.3rem);
+  --text-xl: clamp(1.35rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --text-3xl: clamp(2.15rem, 1.6rem + 2.6vw, 3.5rem);
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.6;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* --------------------------------------------------------
+     ESPACIADO — escala consistente
+     -------------------------------------------------------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 6rem;
+
+  /* --------------------------------------------------------
+     LAYOUT
+     -------------------------------------------------------- */
+  --container-max: 75rem; /* ancho máximo del contenido */
+  --container-pad: clamp(1rem, 4vw, 2rem); /* padding lateral responsive */
+
+  /* --------------------------------------------------------
+     BORDES, RADIOS, SOMBRAS
+     -------------------------------------------------------- */
+  --radius-sm: 4px; /* PLACEHOLDER */
+  --radius-md: 8px; /* PLACEHOLDER */
+  --radius-lg: 16px; /* PLACEHOLDER */
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06); /* PLACEHOLDER */
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08); /* PLACEHOLDER */
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12); /* PLACEHOLDER */
+
+  /* --------------------------------------------------------
+     TRANSICIONES
+     -------------------------------------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 450ms ease;
+  --transition-focus: 2px solid var(--color-accent);
+
+  /* --------------------------------------------------------
+     BREAKPOINTS (referencia)
+     Los media queries CSS no admiten var(); se usan como
+     literales. Mantener sincronizados con esta lista:
+       --bp-sm:  480px   (móvil grande)
+       --bp-md:  768px   (tablet)
+       --bp-lg: 1024px   (desktop)
+       --bp-xl: 1280px   (desktop grande)
+       --bp-2xl:1536px   (pantallas grandes)
+     Ver docs/development/conventions.md
+     -------------------------------------------------------- */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+
+  /* --------------------------------------------------------
+     Z-INDEX
+     -------------------------------------------------------- */
+  --z-dropdown: 100;
+  --z-header: 200;
+  --z-mobile-menu: 300;
+  --z-overlay: 400;
+}

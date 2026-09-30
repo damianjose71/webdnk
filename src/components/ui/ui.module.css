@@ -1,0 +1,145 @@
+/* =============================================================
+   DNK — estilos de componentes UI base
+   (Container, Button, Heading, Badge, Video)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   Container
+   --------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ---------------------------------------------------------------
+   Button
+   --------------------------------------------------------------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-md);
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.buttonPrimary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.buttonPrimary:hover {
+  background-color: var(--color-accent);
+}
+
+.buttonSecondary {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.buttonSecondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.buttonGhost {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.buttonGhost:hover {
+  color: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------
+   Heading
+   --------------------------------------------------------------- */
+.heading {
+  color: var(--color-text);
+}
+
+.heading1 {
+  font-size: var(--text-3xl);
+}
+
+.heading2 {
+  font-size: var(--text-2xl);
+}
+
+.heading3 {
+  font-size: var(--text-xl);
+}
+
+.heading4 {
+  font-size: var(--text-lg);
+}
+
+/* ---------------------------------------------------------------
+   Badge
+   --------------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 0.15rem var(--space-2xs);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badgeNeutral {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.badgeAccent {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+/* ---------------------------------------------------------------
+   Video
+   --------------------------------------------------------------- */
+.video {
+  margin: 0;
+}
+
+.videoPlayer {
+  width: 100%;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  aspect-ratio: 16 / 9;
+}
+
+.videoCaption {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
